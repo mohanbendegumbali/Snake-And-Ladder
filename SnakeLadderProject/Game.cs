@@ -10,11 +10,25 @@ namespace SnakeLadderProject
     {
       int playerposition = 0;
       Random random = new Random();   
-       public void DieRoll()
-        {
+      const int NO_PLAY=0, LADDER=1, SNAKE=2;
+       public int DieRoll()
+       {
           int die = random.Next(1, 7);
-          Console.WriteLine(" Die value " + die);
-        }
-
+          return die;
+       }
+       public void play()
+       {
+            int check = random.Next(0, 3);
+            switch (check)
+            {
+                case NO_PLAY:
+                    break;
+                case LADDER:this.playerposition += DieRoll();
+                    break;
+                case SNAKE:this.playerposition -= DieRoll();
+                    break;
+            }
+               
+       }
     }
 }
