@@ -9,8 +9,8 @@ namespace SnakeLadderProject
     public class Game
     {
       int playerposition = 0;
-      Random random = new Random();   
-      const int NO_PLAY=0, LADDER=1, SNAKE=2;
+      Random random = new Random();
+        const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WIN_POSITION = 100;
        public int DieRoll()
        {
           int die = random.Next(1, 7);
@@ -18,17 +18,23 @@ namespace SnakeLadderProject
        }
        public void play()
        {
-            int check = random.Next(0, 3);
-            switch (check)
+            for (int i = 0; i < WIN_POSITION; i++)
             {
-                case NO_PLAY:
-                    break;
-                case LADDER:this.playerposition += DieRoll();
-                    break;
-                case SNAKE:this.playerposition -= DieRoll();
-                    break;
-            }
-               
+                int check = random.Next(0, 3);
+                switch (check)
+                {
+                    case NO_PLAY:
+                        break;
+                    case LADDER:
+                        this.playerposition += DieRoll();
+                        break;
+                    case SNAKE:
+                        this.playerposition -= DieRoll();
+                        if (this.playerposition < 0)
+                            this.playerposition = 0;
+                        break;
+                }
+            }  
        }
     }
 }

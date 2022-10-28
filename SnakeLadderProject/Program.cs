@@ -2,13 +2,13 @@
 
 namespace SnakeLadderProject
 {
-    class Program
-    {
-         static void Main(string[] args)
-        {
+   class Program
+   {
+      static void Main(string[] args)
+      {
             Console.WriteLine(" Welcome to Snake and Ladder ");
             Game newgame = new Game();
-            newgame.DieRoll();
-        }
-    }
+            newgame.play();
+       }
+   }
 }
