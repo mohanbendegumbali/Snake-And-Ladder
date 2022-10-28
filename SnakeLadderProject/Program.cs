@@ -8,6 +8,7 @@ namespace SnakeLadderProject
         {
             Console.WriteLine(" Welcome to Snake and Ladder ");
             Game newgame = new Game();
+            newgame.DieRoll();
         }
     }
 }

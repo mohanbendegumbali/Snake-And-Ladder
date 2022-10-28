@@ -8,6 +8,13 @@ namespace SnakeLadderProject
 {
     public class Game
     {
-        int playerposition = 0;
+      int playerposition = 0;
+      Random random = new Random();   
+       public void DieRoll()
+        {
+          int die = random.Next(1, 7);
+          Console.WriteLine(" Die value " + die);
+        }
+
     }
 }
