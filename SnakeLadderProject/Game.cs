@@ -10,13 +10,13 @@ namespace SnakeLadderProject
     {
       int playerposition = 0;
       Random random = new Random();
-        const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WIN_POSITION = 100;
-       public int DieRoll()
+      const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WIN_POSITION = 100;
+       public  int DieRoll()
        {
           int die = random.Next(1, 7);
           return die;
        }
-       public void play()
+       public  void play()
        {
             for (int i = 0; i < WIN_POSITION; i++)
             {
@@ -34,7 +34,13 @@ namespace SnakeLadderProject
                             this.playerposition = 0;
                         break;
                 }
+                if(this.playerposition == WIN_POSITION)
+                {
+                    Console.WriteLine(this.playerposition);
+                    return;
+                }
             }  
+            Console.WriteLine(" Player position is at position " + this.playerposition);
        }
     }
 }

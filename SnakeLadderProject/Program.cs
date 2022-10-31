@@ -6,9 +6,9 @@ namespace SnakeLadderProject
    {
       static void Main(string[] args)
       {
-            Console.WriteLine(" Welcome to Snake and Ladder ");
-            Game newgame = new Game();
-            newgame.play();
-       }
+        Console.WriteLine(" Welcome to Snake and Ladder ");
+        Game newgame = new Game();
+        newgame.play();
+      }
    }
 }
